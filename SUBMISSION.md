@@ -6,7 +6,7 @@
 - **Email:** akankshyakar106@gmail.com
 - **GitHub:** https://github.com/Bhagysree09/product-engineer-ps
 - **Selected problem:** Problem 5: Reliable AI Conversation Runtime
-- **Demo video:** TODO (paste link, check it opens in a private window)
+- **Demo video:** https://drive.google.com/file/d/1QoI05YvY67CRNrsrsK7os0yjIDigNSkR/view?usp=sharing
 
 ## Run the project
 
@@ -92,7 +92,7 @@ TypeScript on Node. Async iterators and `AbortController` fit streaming and canc
    - Rejected input is not saved as a conversation message, but the run record is kept.
    - The store also refuses an assistant message for a non-completed run.
 3. **Cancellation and timeout share one `AbortController`.** The runtime races each `iterator.next()` against the abort signal. It stops consuming immediately even if the provider ignores the signal (tested), and it calls `iterator.return()` on cleanup.
-4. **Trace safety.**
+4. **Trace safety.** 
    - Chunk text is never traced.
    - `reasoning` provider events are dropped.
    - Keys matching secret, token, key, password, reasoning or thought are dropped.
@@ -112,9 +112,9 @@ TypeScript on Node. Async iterators and `AbortController` fit streaming and canc
 
 First changes: a durable store (transaction per turn); write the run record as `streaming` at start so a crashed process leaves an inspectable orphan; a real provider adapter with retry rules; per-conversation concurrency limits; and trace export to a log pipeline. Behind a web client, expose `start` over SSE with cancel as a `DELETE`. If users could keep partial output after cancel, I would persist it as an assistant message with an explicit `partial` status, so it is never confused with a completed turn.
 
-## AI usage
+## AI Usage
 
-I used Claude Code throughout this exercise: to scaffold the project, to draft the state machine, runtime, fake provider/clock, trace/redaction logic, and the test suite and benchmark, and to help structure this submission document. I reviewed every file, ran `npm run verify` (typecheck, all tests, and the benchmark) myself to confirm the behaviour, and worked through the design line by line so I can explain and modify any part of it, including the state-transition rules, the persistence boundary, and how cancellation/timeout reach the provider.
+ Used AI tooling to accelerate scaffolding, debugging, and drafting. I reviewed, modified, tested, and validated the generated output and remain responsible for the submitted implementation.
 
 ## Credibility note
 
