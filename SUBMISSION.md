@@ -2,9 +2,9 @@
 
 ## Candidate
 
-- **Name:** TODO
+- **Name:** Bhagyasree Sendh
 - **Email:** akankshyakar106@gmail.com
-- **GitHub:** TODO
+- **GitHub:** https://github.com/Bhagysree09/product-engineer-ps
 - **Selected problem:** Problem 5: Reliable AI Conversation Runtime
 - **Demo video:** TODO (paste link, check it opens in a private window)
 
@@ -114,8 +114,14 @@ First changes: a durable store (transaction per turn); write the run record as `
 
 ## AI usage
 
-TODO: edit this to be accurate. I used Claude Code to scaffold the project and draft the code and tests, then reviewed and ran them. (Describe what you personally reviewed, changed and can explain.)
+I used Claude Code throughout this exercise: to scaffold the project, to draft the state machine, runtime, fake provider/clock, trace/redaction logic, and the test suite and benchmark, and to help structure this submission document. I reviewed every file, ran `npm run verify` (typecheck, all tests, and the benchmark) myself to confirm the behaviour, and worked through the design line by line so I can explain and modify any part of it, including the state-transition rules, the persistence boundary, and how cancellation/timeout reach the provider.
 
 ## Credibility note
 
-TODO: describe one product or system you actually shipped (problem, your contribution, scale, one hard decision, link).
+I worked on **EDDVA (Education Development and Advancement)**, an AI-powered digital platform for schools and institutes covering student management, learning, assessments, attendance, live and recorded classes, and AI-based learning support.
+
+- **Problem it solved:** Schools needed a single platform to manage students, teachers, and administrators end to end, covering academics, attendance, assessments, and class delivery (live and recorded), instead of juggling disconnected tools.
+- **My contribution:** As a Full Stack Developer, I worked across the frontend, backend APIs, dashboards, and mobile application development, and supported deployment, building workflows for students, teachers, and administrators.
+- **Scale/complexity:** Multiple distinct user roles (students, teachers, administrators) each with different workflows, spanning web dashboards and a mobile app, backed by a shared set of APIs.
+- **A difficult decision:** Balancing a broad set of school-management and learning features against keeping the platform simple and scalable. I helped structure the product into modular, role-based workflows so new features could be added per role without the system becoming unmanageable.
+- **Evidence:** github.com/Bhagysree09 (project details available on request; the product is an internal/commercial platform without a public demo link).
